@@ -1,0 +1,225 @@
+{
+	"id": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+	"name": "MediaPro Tasks",
+	"description": "API endpoints for CRUD of tasks.",
+	"order": [
+		"b4932b22-5f85-1bca-2890-1a4e2962b28b",
+		"572e9392-2b66-5643-168c-dc57cddcdb54",
+		"b281ec23-e2ae-dec4-170b-4461f66f7913",
+		"093eca80-5944-3ae9-77e1-080f8eb794f9",
+		"b6b363dd-b7ee-d627-30ee-9aed7a3fa2d1",
+		"69bb672c-5272-5b40-1867-d9d67fa309d1",
+		"fa2b6c0f-503c-4648-b084-4525cb7e136a"
+	],
+	"folders": [],
+	"timestamp": 1468926382642,
+	"owner": "245841",
+	"remoteLink": "https://www.getpostman.com/collections/849c1ed61737b009afad",
+	"public": false,
+	"published": false,
+	"requests": [
+		{
+			"id": "093eca80-5944-3ae9-77e1-080f8eb794f9",
+			"headers": "",
+			"url": "http://localhost:8888/api/tasks/578e1ef73e0a63a5cf22601e",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468947982899,
+			"name": "DELETE /api/tasks/<id>",
+			"description": "* delete a certain task in case that is not running",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": []
+		},
+		{
+			"id": "572e9392-2b66-5643-168c-dc57cddcdb54",
+			"headers": "",
+			"url": "http://localhost:8888/api/tasks/578e25363e0a63a6c6c4b0c8",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468949930959,
+			"name": "GET /api/tasks/<id>",
+			"description": "* retrieves a certain task",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": []
+		},
+		{
+			"id": "69bb672c-5272-5b40-1867-d9d67fa309d1",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8888/api/tasks/578e25363e0a63a6c6c4b0c8/payload",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468949937438,
+			"name": "POST /api/tasks/<id>/payload",
+			"description": "* adds or replace payload first level key, and returns the modified task\n    * example:\n\n        ```\n        {\"id\":\"eea97a6\", start:\"20160718T01\", \"status\": \"SCHEDULED\", \"payload\": {\"key1\": \"value1\", \"key2\" = [1,2,3]}}\n        ```\n        ```\n        POST /api/task/eea97a6/payload {\"key3\":{\"key3_1\":\"value3_1\"}}\n\t\t```\n\t\t```\n        {\"id\":\"eea97a6\", start:\"20160718T01\", \"status\": \"SCHEDULED\", \"payload\": {\"key1\": \"value1\", \"key2\" = [1,2,3], \"key3\":{\"key3_1\":\"value3_1\"}}}\n        ```",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": [],
+			"rawModeData": "{\n    \"key3\": \"123123\"\n}"
+		},
+		{
+			"id": "b281ec23-e2ae-dec4-170b-4461f66f7913",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8888/api/tasks",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468949722795,
+			"name": "POST /api/tasks",
+			"description": "* creates a new task, 'start' must be a future datetime.",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": [],
+			"rawModeData": "{\n    \"title\": \"Destroy the world!\",\n    \"start\": 1499930541447,\n    \"status\": \"SCHEDULED\",\n    \"worker\": \"myself\",\n    \"payload\": {\n        \"key1\": \"value1\",\n        \"key2\": [1,2,3]\n    }\n}"
+		},
+		{
+			"id": "b4932b22-5f85-1bca-2890-1a4e2962b28b",
+			"headers": "",
+			"url": "http://localhost:8888/api/tasks?from=1469930541447",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468949728127,
+			"name": "GET /api/tasks",
+			"description": "* retrieves all tasks\n* optional filters:\n    * worker\n    * status\n    * from: tasks which begin after 'from'\n    * to: tasks which start before 'to'",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": []
+		},
+		{
+			"id": "b6b363dd-b7ee-d627-30ee-9aed7a3fa2d1",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8888/api/tasks/578e25363e0a63a6c6c4b0c8",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PATCH",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468949761921,
+			"name": "PATCH /api/tasks/<id>",
+			"description": "* modifies a certain task",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": [],
+			"rawModeData": "{\n    \"status\": \"FAILED\",\n    \"start\": 1469930541449,\n    \"_id\": \"578e1ef73e0a63a5cf22601e\",\n    \"worker\": \"task_worker_0034\"\n  }"
+		},
+		{
+			"id": "fa2b6c0f-503c-4648-b084-4525cb7e136a",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8888/api/tasks/578e25363e0a63a6c6c4b0c8/payload/key3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1468950031203,
+			"name": "DELETE /api/tasks/<id>/payload/<key>",
+			"description": "* deletes a certain first level key from the payload if it exists\n    * example:\n\n\t    ```\n\t    {\"id\":\"eea97a6\", start:\"20160718T01\", \"status\": \"SCHEDULED\", \"payload\": {\"key1\": \"value1\", \"key2\" = [1,2,3]}}\n\t    ```\n\t    ```\n\t    DELETE /api/task/eea97a6/payload/key1\n\t\t```\n\t\t```\n\t    {\"id\":\"eea97a6\", start:\"20160718T01\", \"status\": \"SCHEDULED\", \"payload\": {\"key2\" = [1,2,3]}}\n\t    ```",
+			"collectionId": "658f3cec-09bf-804a-7eab-d1cbf3c6b05d",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 25,
+					"headers": [
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "184",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Tue, 19 Jul 2016 16:48:36 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "TornadoServer/4.4",
+							"description": "A name for the server"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"data\": {\"status\": \"FAILED\", \"start\": 1469930541449, \"_id\": \"578e1ef73e0a63a5cf22601e\", \"worker\": \"task_worker_0015\", \"payload\": {\"key2\": [1, 2, 3], \"key1\": \"value1\"}}, \"error\": null}",
+					"language": "html",
+					"rawDataType": "text",
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"state": {
+						"size": "normal"
+					},
+					"id": "ae81c18c-e274-cfcb-50d8-356cd9e6056e",
+					"name": "response",
+					"request": {
+						"url": "http://localhost:8888/api/tasks/578e1ef73e0a63a5cf22601e/payload/key3",
+						"headers": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": "The mime type of this content"
+							}
+						],
+						"data": "{\n    \"key3\": {\n        \"key3_1\": \"value3_1\"\n    }\n}",
+						"method": "DELETE",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": ""
+		}
+	]
+}

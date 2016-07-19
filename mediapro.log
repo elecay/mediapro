@@ -1,0 +1,9 @@
+19/07/2016 20:07:33 - root - ERROR - (MainThread) invalid literal for int() with base 10: 'a'
+Traceback (most recent call last):
+  File "/Users/elecay/proyectos/mediapro/routes/handlers.py", line 31, in get
+    response = [doc for doc in self.service.find(self)]
+  File "/Users/elecay/proyectos/mediapro/services/task_services.py", line 13, in find
+    pagination = utils.pagination_builder(request)
+  File "/Users/elecay/proyectos/mediapro/utils/__init__.py", line 21, in pagination_builder
+    page = int(request.get_argument('page', default=1, strip=False))
+ValueError: invalid literal for int() with base 10: 'a'
