@@ -55,3 +55,8 @@ For manual testing install Postman:
 Import folder _postman_
 
 For API documentation see _View Docs_ under the collection _MediaProTasks_.
+
+# Notes
+
+* Fields related to dates should be timestamps (this is, milliseconds since epoch)
+* GET */api/tasks* has pagination (ex. ?page=1&rows=5)
