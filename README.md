@@ -24,7 +24,8 @@ More info: https://docs.mongodb.com/manual/installation/
     > sudo mongod       # start the db
 
 Check that the db is running by:
-         > mongo
+
+    > mongo
 
 You should se something like:
 
@@ -49,8 +50,8 @@ You should se something like:
 
 For manual testing install Postman:
 
-https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+    https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
 Import folder _postman_
 
-For API documentation see _View Docs_ under the collection _MediaProTasks_
+For API documentation see _View Docs_ under the collection _MediaProTasks_.
