@@ -27,7 +27,7 @@ Check that the db is running by:
 
     > mongo
 
-You should se something like:
+You should see something like:
 
     MongoDB shell version: 3.2.5
     connecting to: test
