@@ -51,4 +51,6 @@ For manual testing install Postman:
 
 https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
-Import folder /postman
+Import folder _postman_
+
+For API documentation see _View Docs_ under the collection _MediaProTasks_
